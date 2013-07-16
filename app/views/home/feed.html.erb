@@ -1,0 +1,43 @@
+<% client = Instagram.client(:access_token => session[:access_token]) %>
+<% user = client.user %>
+
+<body>
+	<div class="navbar navbar-static-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand", href='/home/index'>Monthlygram</a>
+				<ul class="nav pull-right">
+					<li><img src=<%= "#{user.profile_picture}" %> style="height:30px; width:auto; padding-top:5px"></li>
+					<li><a href="#"><%= "#{user.username}" %></a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="/oauth/logout">Log out</a></li>
+				</ul>
+			</div>
+		</div>		
+	</div>
+	<div class="container">
+		<div class="span2" style="margin-left:-10px">
+			<ul class="nav nav-list">
+				<li class="nav-header">Choose A Month</li>
+				<li class="active"><%= select_month(Date.today, use_short_month: true) =%></li>
+			</ul>
+		</div>
+	</div>
+	</br>
+		<div class="row">
+			<div class="container">
+				<div class="wrapper">
+					<% for media_item in client.user_recent_media %>
+					<div class="span2">
+						<img src=<%= "#{media_item.images.thumbnail.url}" %> class="img-rounded">
+						<% time = media_item.caption.created_time %>
+						<ul style="list-style:none">
+							<li style="margin-left:-25px"><strong><%= Time.at(time.to_i) %></strong></li>
+						</ul>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>		
+	</div>	
+</body>
