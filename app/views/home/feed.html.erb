@@ -28,6 +28,7 @@
 			<div class="row">
 				<div class="thumbnails">
 					<% for media_item in client.user_recent_media %>
+					<div class="cboxOverlay" style="opacity:0.5"></div>
 					<div class="span2">
 						<a href=<%="#{media_item.images.standard_resolution.url}" %> class="gallery">
 							<img src=<%= "#{media_item.images.thumbnail.url}" %> class="img-rounded">
