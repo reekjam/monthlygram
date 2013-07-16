@@ -29,7 +29,7 @@
 				<div class="thumbnails">
 					<% for media_item in client.user_recent_media %>
 					<div class="span2">
-						<a href="#" class="thumbnail">
+						<a href=<%="#{media_item.images.standard_resolution.url}" %> class="gallery">
 							<img src=<%= "#{media_item.images.thumbnail.url}" %> class="img-rounded">
 							<% time = media_item.caption.created_time %>
 							<ul style="list-style:none">
@@ -41,5 +41,8 @@
 				</div>
 			</div>
 		</div>		
-	</div>	
+	</div>
+	<script>
+		jQuery('a.gallery').colorbox();
+	</script>	
 </body>
