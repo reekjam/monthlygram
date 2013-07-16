@@ -24,16 +24,18 @@
 		</div>
 	</div>
 	</br>
-		<div class="row">
-			<div class="container">
-				<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="thumbnails">
 					<% for media_item in client.user_recent_media %>
 					<div class="span2">
-						<img src=<%= "#{media_item.images.thumbnail.url}" %> class="img-rounded">
-						<% time = media_item.caption.created_time %>
-						<ul style="list-style:none">
-							<li style="margin-left:-25px"><strong><%= Time.at(time.to_i) %></strong></li>
-						</ul>
+						<a href="#" class="thumbnail">
+							<img src=<%= "#{media_item.images.thumbnail.url}" %> class="img-rounded">
+							<% time = media_item.caption.created_time %>
+							<ul style="list-style:none">
+								<li style="margin-left:-25px"><strong><%= Time.at(time.to_i) %></strong></li>
+							</ul>
+						</a>
 					</div>
 					<% end %>
 				</div>
