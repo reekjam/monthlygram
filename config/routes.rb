@@ -5,13 +5,13 @@ Monthlygram::Application.routes.draw do
 
   get "oauth/logout"
 
-  get "home/index"
+  get "user/index"
 
-  get "home/feed"
+  get "user/feed"
 
-  get "home/adios"
+  get "user/adios"
 
-  root to: "home#index"
+  root to: "user#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
