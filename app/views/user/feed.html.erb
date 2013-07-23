@@ -17,7 +17,12 @@
 			<div class="span2">
 				<ul class="nav nav-list">
 					<li class="nav-header">Choose A Month</li>
-					<li class="active"><%= select_month(Date.today, use_short_month: true) =%></li>
+					<li class="active">
+						<%= form_tag user_feed_path, method: "get" do %>
+							<%= select_tag :month, options_for_select( ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"], params[:month]) %>
+							<%= submit_tag "Go" %>
+						<% end %>
+					</li>
 				</ul>
 			</div>
 			<div class="span10">
@@ -27,7 +32,4 @@
 			</div>			
 		</div>
 	</div>
-	<script>
-		jQuery('a.gallery').colorbox();
-	</script>
 </body>
