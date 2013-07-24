@@ -2,10 +2,10 @@
 	<div class="navbar navbar-static-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand", href='/user/index'>Monthlygram</a>
+				<a class="brand", href='/user/index', style="margin-left:-33px">Monthlygram</a>
 				<ul class="nav pull-right">
-					<li><img src=<%= "#{@user.profile_picture}" %> style="height:30px; width:auto; padding-top:5px"></li>
-					<li><a href="#"><%= "#{@user.username}" %></a></li>
+					<li><img src=<%= "#{@ig_user.profile_picture}" %> style="height:30px; width:auto; padding-top:5px"></li>
+					<li><a href="#"><%= "#{@ig_user.username}" %></a></li>
 					<li class="divider-vertical"></li>
 					<li><a href="/oauth/logout">Log out</a></li>
 				</ul>
@@ -13,23 +13,21 @@
 		</div>		
 	</div>
 	<div class="container">
-		<div class="span12">
-			<div class="span2">
-				<ul class="nav nav-list">
-					<li class="nav-header">Choose A Month</li>
-					<li class="active">
-						<%= form_tag user_feed_path, method: "get" do %>
-							<%= select_tag :month, options_for_select( ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"], params[:month]) %>
-							<%= submit_tag "Go" %>
-						<% end %>
-					</li>
-				</ul>
-			</div>
-			<div class="span10">
-				<div class="thumbnails">
-					<%= render partial: "photo", collection: @photos %>
+		<div class="span12" style="margin-left:-10px">
+			<div class="row">
+				<div class="feed_wrapper"></div>
+				<div class="span2">
+					<%= form_tag user_feed_path, method: "get" do %>
+						<%= select_tag :month, options_for_select( ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"], params[:month]) %></br>
+						<%= submit_tag "Go", :class => "btn btn-success"%>
+					<% end %>
 				</div>
-			</div>			
+				<div class="span10">
+					<div class="thumbnails">
+						<%= render partial: "photo", collection: @photos %>
+					</div>
+				</div>	
+			</div>		
 		</div>
 	</div>
 </body>
