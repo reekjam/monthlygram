@@ -10,7 +10,7 @@ class UserController < ApplicationController
 
 		for month in all_months
 			if params[:month] == month
-				@photos = client.user_recent_media(min_timestamp: get_start_and_end_date(params[:month])[:start], 
+				@photos = client.user_recent_media(count: 50, min_timestamp: get_start_and_end_date(params[:month])[:start], 
 									max_timestamp: get_start_and_end_date(params[:month])[:end])
 			end
 		end
