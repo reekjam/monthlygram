@@ -1,7 +1,7 @@
 
 <div class="cboxOverlay"></div>
 <div class="span2">
-	<a href=<%="#{photo.images.standard_resolution.url}" %> class="gallery group" title="<%= photo.caption.text.truncate(120) %>">
+	<a href=<%="#{photo.images.standard_resolution.url}" %> class="gallery group" title="<%= photo.caption.text.truncate(178) %>">
 		<img src=<%= photo.images.thumbnail.url %> class="img-rounded">
 		<% time = photo.caption.created_time %>
 		<ul style="list-style:none">
