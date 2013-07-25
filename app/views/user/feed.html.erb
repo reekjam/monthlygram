@@ -18,7 +18,8 @@
 				<div class="feed_wrapper"></div>
 				<div class="span2">
 					<%= form_tag user_feed_path, method: "get" do %>
-						<%= select_tag :month, options_for_select( ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"], params[:month]) %></br>
+						<% # month_options is an array in application_helper %>
+						<%= select_tag :month, options_for_select(month_options, params[:month]), :default => "JUL" %></br>
 						<%= submit_tag "Go", :class => "btn btn-success"%>
 					<% end %>
 				</div>

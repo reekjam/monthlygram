@@ -1,3 +1,3 @@
 $(function(){
-  jQuery('a.gallery').colorbox();
+  jQuery('a.gallery').colorbox({rel: 'group'});
 });
