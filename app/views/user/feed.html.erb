@@ -4,8 +4,8 @@
 			<div class="container">
 				<a class="brand", href='/user/index', style="margin-left:-33px">Monthlygram</a>
 				<ul class="nav pull-right">
-					<li><img src=<%= "#{@ig_user.profile_picture}" %> style="height:30px; width:auto; padding-top:5px"></li>
-					<li><a href="#"><%= "#{@ig_user.username}" %></a></li>
+					<li><img src= "<%= @ig_user.profile_picture %>" style="height:30px; width:auto; padding-top:5px"></li>
+					<li><a href="#">"<%= @ig_user.username %>"</a></li>
 					<li class="divider-vertical"></li>
 					<li><a href="/oauth/logout">Log out</a></li>
 				</ul>

@@ -12,10 +12,10 @@ class ApplicationController < ActionController::Base
   end
 
   def has_caption(photo)
-    if photo.caption != nil
-      photo.caption.text.truncate(178)
-    else
+    if photo.caption.blank?
       ""
+    else
+      photo.caption.text.truncate(178)
     end
   end
 
