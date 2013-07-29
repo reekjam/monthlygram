@@ -2,6 +2,7 @@ require 'Date'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper_method :has_caption
   def get_start_and_end_date(month)
 
   	start_date = Time.local(Time.now.year, month)
@@ -9,4 +10,13 @@ class ApplicationController < ActionController::Base
   	
   	{start: start_date.to_i, end: end_date.to_i}
   end
+
+  def has_caption(photo)
+    if photo.caption != nil
+      photo.caption.text.truncate(178)
+    else
+      ""
+    end
+  end
+
 end

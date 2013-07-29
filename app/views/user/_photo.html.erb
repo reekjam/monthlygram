@@ -1,9 +1,8 @@
-
 <div class="cboxOverlay"></div>
 <div class="span2">
-	<a href=<%="#{photo.images.standard_resolution.url}" %> class="gallery group" title="<%= photo.caption.text.truncate(178) %>">
+	<a href="<%= photo.images.standard_resolution.url %>" class="gallery group" title="<%= photo.caption != nil ? photo.caption.text.truncate(178) : '' %>">
 		<img src=<%= photo.images.thumbnail.url %> class="img-rounded">
-		<% time = photo.caption.created_time %>
+		<% time = photo.created_time %>
 		<ul style="list-style:none">
 			<li style="margin-left:-25px"><strong><%= Time.at(time.to_i) %></strong></li>
 		</ul>
