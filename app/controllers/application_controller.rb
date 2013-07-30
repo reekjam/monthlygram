@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :has_caption
+
   def get_start_and_end_date(month)
 
   	start_date = Time.local(Time.now.year, month)
