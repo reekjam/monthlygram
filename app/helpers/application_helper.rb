@@ -3,6 +3,10 @@ module ApplicationHelper
 		[["JAN", "01"], ["FEB", "02"], ["MAR", "03"], ["APR", "04"], ["MAY", "05"], ["JUN", "06"], ["JUL", "07"], ["AUG", "08"], ["SEP", "09"], ["OCT", "10"], ["NOV", "11"], ["DEC", "12"]]
 	end
 
+	def year_options
+		[2013, 2012, 2011, 2010]
+	end
+
 	def has_caption(photo)
     if photo.caption.blank?
       ""

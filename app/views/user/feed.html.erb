@@ -20,6 +20,7 @@
 					<%= form_tag user_feed_path, method: "get" do %>
 						<% # month_options is an array in application_helper %>
 						<%= select_tag :month, options_for_select(month_options, params[:month] || @today) %></br>
+						<%= select_tag :year, options_for_select(year_options, params[:year]) %>
 						<%= submit_tag "Go", :class => "btn btn-success"%>
 					<% end %>
 				</div>
