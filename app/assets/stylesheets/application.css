@@ -38,3 +38,15 @@ body {
 .feed_wrapper {
 	padding-top: 40px;
 }
+
+.oops-page {
+	text-align: center;
+	padding-top: 40px;
+}
+
+.oops-header {
+	font-size: 80px;
+	font-family: 'Lobster Two';
+	color: #000000;
+	text-shadow: 0 1px 0 #CD9B9B;
+}
