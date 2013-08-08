@@ -1,16 +1,14 @@
 <div class="cboxOverlay"></div>
 <div class="span2">
-	<a href="<%= photo.images.standard_resolution.url %>" class="gallery group" title="<%= has_caption(photo) %>">
+	<a href="<%= photo.images.standard_resolution.url %>" class="gallery group" title="<%= has_caption(photo) %>" style="text-decoration">
 		<img src=<%= photo.images.thumbnail.url %> class="img-rounded">
+	</a>
 		<ul style="list-style:none">
 			<li style="margin-left:-25px">
-				<i class="icon-heart-empty"></i>
-
+				<i class="icon-heart-empty" style="color:#FF0000"></i>
+				<%= photo.likes[:count] %>
+				<i class="icon-calendar"></i>
+				<%= Time.at(photo.created_time.to_i).to_date %>
 			</li>
 		</ul>
-<!-- 		<% time = photo.created_time %> -->
-<!-- 		<ul style="list-style:none">
-			<li style="margin-left:-25px"><strong><%= Time.at(time.to_i) %></strong></li>
-		</ul> -->
-	</a>
 </div>

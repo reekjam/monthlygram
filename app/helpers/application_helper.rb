@@ -4,7 +4,7 @@ module ApplicationHelper
 	end
 
 	def year_options
-		[2013, 2012, 2011, 2010]
+		[2010, 2011, 2012, 2013]
 	end
 
 	def has_caption(photo)
