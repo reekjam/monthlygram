@@ -3,12 +3,16 @@
 	<a href="<%= photo.images.standard_resolution.url %>" class="gallery group" title="<%= has_caption(photo) %>" style="text-decoration">
 		<img src=<%= photo.images.thumbnail.url %> class="img-rounded">
 	</a>
-		<ul style="list-style:none">
-			<li style="margin-left:-25px">
-				<i class="icon-heart-empty" style="color:#FF0000"></i>
-				<%= photo.likes[:count] %>
-				<i class="icon-calendar"></i>
-				<%= Time.at(photo.created_time.to_i).to_date %>
-			</li>
-		</ul>
+		<table style="width:140px">
+			<tr>
+				<td style="text-align:left">
+					<i class="icon-calendar" style="color:#bdbdbd"></i>
+					<%= Time.at(photo.created_time.to_i).strftime("%m/%d") %>
+				</td>
+				<td style="text-align:right">
+					<i class="icon-heart-empty" style="color:#FF0000"></i>
+					<%= photo.likes[:count] %>
+				</td>
+			</tr>
+		</table>
 </div>
