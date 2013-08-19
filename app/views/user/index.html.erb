@@ -1,14 +1,9 @@
-<body>
-	<div class='hero-unit'>
-		<div class='container'>
+
+	<div class='container' style='text-align:center'>
+		<div class='center hero-unit'>
 			<p class='welcome-header'>Monthlygram</p></br>
-			<p>Use your Instagram account to log in and organize your photos in monthly fashion.</p>
-			<a class="btn btn-success btn-large" href="/oauth/connect">Log in with Instagram</a>
+			<h2>Use your Instagram account to log in and organize your photos in monthly fashion.</h2>
+			<%= link_to "Log in with Instagram", "/oauth/connect", 
+																						class: "btn btn-success btn-large" %>
 		</div>
 	</div>
-	<div class='container'>
-		<div class='wrap'>
-			<p id="footer-notes">Monthlygram uses the Instagram™ API and is not endorsed or certified by Instagram or Instagram, Inc. All Instagram™ logos and trademarks displayed on this [application/website] are property of Instagram, Inc.</p>
-		</div>
-	</div>
-</body>

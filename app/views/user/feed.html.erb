@@ -1,21 +1,16 @@
-<body>
 	<div class="navbar navbar-static-top">
 		<div class="navbar-inner">
-			<div class="container">
-				<a class="brand", href='/user/index', style="margin-left:-33px">Monthlygram</a>
-				<ul class="nav pull-right">
-					<li><img src="<%= @ig_user.profile_picture %>" style="height:30px; width:auto; padding-top:5px"></li>
-					<li><a href="#"><%= @ig_user.username %></a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="/oauth/logout">Log out</a></li>
-				</ul>
-			</div>
+			<a class="brand", href='/user/index'>Monthlygram</a>
+			<ul class="nav pull-right">
+				<li><img src="<%= @ig_user.profile_picture %>" style="height:30px; width:auto; padding-top:5px"></li>
+				<li><a href="#"><%= @ig_user.username %></a></li>
+				<li class="divider-vertical"></li>
+				<li><a href="/oauth/logout">Log out</a></li>
+			</ul>
 		</div>		
 	</div>
-	<div class="container">
-		<div class="span12" style="margin-left:-30px">
-			<div class="row">
-				<div class="feed_wrapper"></div>
+		<div class="container-fluid">
+			<div class="row-fluid">
 				<div class="span2">
 					<%= form_tag user_feed_path, method: "get" do %>
 						<% # month_options is an array in application_helper %>
@@ -24,15 +19,12 @@
 						<%= submit_tag "Go", :class => "btn btn-success"%>
 					<% end %>
 				</div>
-				<div class="span10">
-					<div class="thumbnails">
-						<%= render partial: "photo", collection: @photos %>
-						<% if @photos.size == 0 %>
-						<%=   render partial: "none" %>
-						<% end %>
-					</div>
+			<div class="span10">
+				<div class="thumbnails">
+					<%= render partial: "photo", collection: @photos %>
+					<% if @photos.size == 0 %>
+					<%=   render partial: "none" %>
+					<% end %>
 				</div>
-			</div>		
+			</div>
 		</div>
-	</div>
-</body>
