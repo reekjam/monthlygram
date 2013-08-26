@@ -20,11 +20,9 @@
 					<% end %>
 				</div>
 			<div class="span10">
-				<div class="thumbnails">
-					<%= render partial: "photo", collection: @photos %>
-					<% if @photos.size == 0 %>
-					<%=   render partial: "none" %>
-					<% end %>
-				</div>
+				<%= render partial: "photo", collection: @photos %>
+				<% if @photos.size == 0 %>
+				<%=   render partial: "none" %>
+				<% end %>
 			</div>
 		</div>
